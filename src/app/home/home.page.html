@@ -8,7 +8,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-fab slot="fixed" vertical="top" horizontal="end" [edge]="true">
-    <ion-fab-button>
+    <ion-fab-button routerLink="/cadastro">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -20,44 +20,30 @@
   </ion-header>
 
 
-  <ion-card>
+  <ion-card *ngFor="let compromisso of compromissos; let i=index">
     <ion-card-header>
-      <ion-card-title>Matemática</ion-card-title>
-      <ion-card-subtitle>ENTREGAR TRABALHAR SOBRE TRIGNOMETRIA</ion-card-subtitle>
+      <ion-card-title>{{compromisso.materia}}</ion-card-title>
+      <ion-card-subtitle>{{compromisso.descricao}}</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
       <ion-item>
         <ion-icon name="alarm"></ion-icon>
-        <ion-input label="" placeholder="Enter text"></ion-input>
+        <ion-input label="" placeholder="Alarme"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon name="calendar"></ion-icon>
-        <ion-input label="" placeholder="Enter text"></ion-input>
+        <ion-input label="" placeholder="Calendario"></ion-input>
       </ion-item>
-                 
+
+               <ion-item>
+                <ion-button expand="full"(click)="excluir(i)">Feito</ion-button>
+              </ion-item>
+             
+            
     </ion-card-content>
 
   </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Português</ion-card-title>
-      <ion-card-subtitle>PROVA SOBRE PRONOME PESSOAL DO CASO RETO</ion-card-subtitle>
-    </ion-card-header>
   
-    <ion-card-content>
-      <ion-item>
-        <ion-icon name="alarm"></ion-icon>
-        <ion-input label="" placeholder="Enter text"></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-icon name="calendar"></ion-icon>
-        <ion-input label="" placeholder="Enter text"></ion-input>
-      </ion-item>
-                 
-    </ion-card-content>
-
-  </ion-card>
 </ion-content>
