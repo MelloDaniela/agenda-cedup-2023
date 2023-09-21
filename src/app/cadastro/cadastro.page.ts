@@ -24,7 +24,8 @@ console.log(this.localstorage_service.get('compromisso'));
   salvar(){
     let compromisso= {
       materia:this.materia,
-      descricao:this.descricao
+      descricao:this.descricao,
+      datahora:this.datahora
     };
     
     this.localstorage_service.post('compromisso', compromisso);
